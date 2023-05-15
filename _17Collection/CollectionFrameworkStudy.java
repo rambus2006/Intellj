@@ -21,6 +21,6 @@ public class CollectionFrameworkStudy {
         System.out.println(v.lastElement()); //2
         v.clear(); //다 지워지는 것
         System.out.println(v.size()); //0
-       // System.out.println(v.elementAt(4)); //이거 대신 get 쓰는 게 낫다.
+        // System.out.println(v.elementAt(4)); //이거 대신 get 쓰는 게 낫다.
     }
 }
