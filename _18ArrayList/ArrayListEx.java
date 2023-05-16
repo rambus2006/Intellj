@@ -25,6 +25,7 @@ public class ArrayListEx {
             }
             System.out.println("\n가장 긴 이름은 : " +
                     a.get(longestIndex));
+            //git 커밋 안되서 뭐라도 쓰는 중 ...
         }
         scanner.close();
     }
