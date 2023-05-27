@@ -6,6 +6,5 @@ public class IPTV extends ColorTV{
     }
 
     public static void main(String args[]){
-        IPTV
     }
 }
