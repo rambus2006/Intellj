@@ -1,0 +1,49 @@
+body {
+    background:#f5f5f5;
+}
+.center {
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+}
+/*input 요소 중 id값이 같은 요소만 선택 */
+input[id="menuicon"] {
+    display:none; /*요소 안보이게 가리기 */
+}
+input[id="menuicon"] + label { /*'+'는 인접 요소 선택자*/
+    display:block; /*레이아웃(div와 같은 block 요소를 선언*/
+    width:60px;
+    height:40px;
+    position:relative; /*absolute의 기준점*/
+    cursor:pointer; /*커서 모양 바꾸기 */
+}
+input[id="menuicon"] + label span { /*3개의 span 태그를 선택*/
+    display:block;
+    position:absolute; /*레이어 속성*/
+    width:100%;
+    height:5px;
+    border-radius:30px;
+    background:#000;
+    transition:all .35s; /*모션(애니메이션 효과주기)*/
+}
+/*각 요소를 순차적으로 선택 */
+input[id="menuicon"] + label span:nth-child(1) {
+    top:0; /*맨 위*/
+}
+input[id="menuicon"] + label span:nth-child(2) {
+    top:50%; /*가운데*/
+    transform:translateY(-50%); /*요소를 y축으로 값만큼 이동,안주면 확실히 가운데가 아니라 약간 내려간 형태*/
+} 
+input[id="menuicon"] + label span:nth-child(3) {
+    bottom:0;/*하단*/
+}
+
+input[id="menuicon"]:checked + label span:nth-child(1) { /*menuicon 아이디 값을 갖고 있는 input 요소가 check가 되었을 때/ 체크가 되었을 때 첫번째 span 요소  */
+    top:50%; /*absolute의 위치값(checked 변화값)*/
+    transform:translateY(-50%) rotate(45deg);
+}
+input[id="menuicon"]:checked + label span:nth-child(2) {
+    opacity:0;
+}
+input[id="menuicon"]:checked + label span:nth-child(3) {
+    bottom:50%;
+    transform:translateY(50%) rotate(-45deg);
+}
