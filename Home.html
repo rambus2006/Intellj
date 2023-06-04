@@ -7,21 +7,22 @@
     <title>핏북,당신의 옷장을 책임져드립니다</title>
     <link rel="stylesheet" href="Home.css">
     <link rel="stylesheet" href="sidebars.css">
+    <link rel="stylesheet" href="Homemenu.css">
     <script src="sidebars.js"> </script>
     <script src="https://kit.fontawesome.com/f7cec210fe.js" crossorigin="anonymous"></script>
-    </script>
+    
+</script>
 </head>
 <body>
 <header>  
-        <!--nav바-->
+        <!--1-1 nav바-->
         <nav class="navbar">
             <div class="navbar_logo">
                 <img src="./images/핏북로고.png">
                 <a href=""></a>
             </div>
-            
         </nav>
-        <!--햄버거 버튼구현-->     
+        <!--2. 햄버거 버튼구현-->     
         <!--옆에서 나오는 창 구현  -->
         <input class="burger-check" type="checkbox" id="burger-check" /><label class="burger-icon" for="burger-check"><span class="burger-sticks"></span></label>
         <div class="menu">
@@ -35,8 +36,49 @@
                 <li><a href="">옷 사러가기<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
             </ul>
         </div>
-        
-        
-</header>
+    </header> 
+    <nav>
+        <!--1-4 비오는 날 색깔에 따른 옷 추천-->
+        <div class="rainbackground">
+            <img src="./images/rain.jpg">
+            <div class="rainText">
+                <h2 #rain1>비가 내리네요<br></h2>
+                <h1 #rain2>파란색은<br></h1>
+                <h2 #rain3>어떨까요?</h2>
+            </div>
+        </div>
+        <!--3. 비오는 날 컬러추천 팔레트-->
+        <!--https://wikidocs.net/91516-->
+        <div class="cards">
+            <div class="cardCampanula">
+                <img src="./images/Campanula.png" alt="">
+                <a href="https://www.instagram.com/p/CYnlXtDJJKi/?utm_source=ig_web_copy_link&igshid=MmJiY2I4NDBkZg=="><h1>Campanula</h1></a>
+            </div>
+            <div class="cardMidnight">
+                <img src="./images/Midnight.png" alt="">
+                <a href="https://www.instagram.com/p/ChleAfjp7Ex/?utm_source=ig_web_copy_link&igshid=MmJiY2I4NDBkZg=="><h1>Midnight</h1></a> 
+            </div>
+            <div class="cardClassicBlue">
+                <img src="./images/Bluing.png" alt="">
+                <a href="https://www.instagram.com/p/Ce5SJelpY5e/?utm_source=ig_web_copy_link&igshid=MmJiY2I4NDBkZg=="><h1>ClassicBlue</h1></a>
+            </div>
+        </div>
+    </nav>
+    <!--content 시작(주 내용)-->
+    <content>
+        <!--4. 자신이 갖고 있는 옷 보여주기-->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+    </content>
+
+
 </body>
 </html>
