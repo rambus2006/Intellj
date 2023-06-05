@@ -46,3 +46,20 @@ git 폴더 cmd 연결하는 법
 3. git remote add origin <원격 저장소 URL>
 4. 있다면 origin부분을 다르게 바꾸기 
 5. 이제 commit 하기 
+
+문제
+1)
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/rambus2006/Web.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+해결 
+git init
+
+2)
+error: failed to push some refs to 'https://github.com/rambus2006/Web'
+git pull {원격저장소별칭 보통 origin이라고 함} master
+한 후 깃 푸시

@@ -1,0 +1,12 @@
+/*4-3 드롭다운 안의 요소*/
+@media (min-width:0px) {
+    img{
+        margin-left:10px;
+        width: 120px;
+        height: 120px;
+    }
+    button{
+        background-color: white;
+        border: none;
+    }
+}
