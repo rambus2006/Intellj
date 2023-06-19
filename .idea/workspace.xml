@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f747f103-9798-48da-960f-da2f1b08ef0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/_19PerformTest/_01Inheritance/IPTV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_19PerformTest/_01Inheritance/TV.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_21Comparable인터페이스/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_22Generic/_23Java/IntegerBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayList3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ6.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/_001_Java2305Code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/_001_Java2305Code/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/_001_Java2305Code/Hello.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +47,15 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/LocalMinseoBang/gitfolder/_001_Java2305Code/src&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Student" />
+      <module name="_001_Java2305Code" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -50,5 +66,8 @@
       <updated>1684572874942</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/src$Unnamed.ic" NAME="Unnamed Coverage Results" MODIFIED="1687149599395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
