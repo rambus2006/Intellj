@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f747f103-9798-48da-960f-da2f1b08ef0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/_21Comparable인터페이스/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_22Generic/_23Java/IntegerBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayList3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ5.java" beforeDir="false" afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ6.java" beforeDir="false" afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ6.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/_001_Java2305Code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/_001_Java2305Code/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/_001_Java2305Code/Hello.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
