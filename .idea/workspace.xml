@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f747f103-9798-48da-960f-da2f1b08ef0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_25Stream/IOStudy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ5.java" beforeDir="false" afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ6.java" beforeDir="false" afterPath="$PROJECT_DIR$/_24ArrayList문제/ArrayListQ6.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/_001_Java2305Code/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/_001_Java2305Code/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/_001_Java2305Code/_24ArrayList문제/ArrayListQ7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/_001_Java2305Code/_24ArrayList문제/ArrayListQ7.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +41,12 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Student" />
+    <configuration name="IOStudy" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_25Stream.IOStudy" />
       <module name="_001_Java2305Code" />
+      <selectedOptions>
+        <option name="environmentVariables" visible="false" />
+      </selectedOptions>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
