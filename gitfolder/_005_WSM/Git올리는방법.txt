@@ -9,7 +9,7 @@ cmd에서 하는 방법>
 5. push해서 github에 올리기 
   명령어: git push -u origin master (저장소명) (브랜치명)
 
-<기타>
+<기타>git 
 - add + commit 한번에 하기
 git commit -am "commit message"
 
@@ -58,6 +58,8 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 해결 
 git init
+
+git push -u webclone +master 
 
 2)
 error: failed to push some refs to 'https://github.com/rambus2006/Web'

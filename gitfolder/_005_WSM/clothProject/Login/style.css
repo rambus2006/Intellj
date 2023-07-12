@@ -1,0 +1,51 @@
+body{
+    background-color: #F6EBE2;
+}
+
+#form{
+    background-color: #fff;
+    width:25%;
+    border-radius: 10px;
+    margin:120px auto;
+    padding:50px;
+    box-shadow: 10px 10px 5px #6b553b;
+}
+#form h1{
+    font-size: 45px;
+    text-align: center;
+}
+#form i{
+    font-family: 'Dancing Script', cursive;
+}
+#user{
+    position: relative;
+	width: 200px;
+	height: 24px;
+	background: #EEEEEE;
+	border-radius: 40px;
+	border:none;
+}
+#pass{
+    position: relative;
+	width: 200px;
+	height: 24px;
+	background: #EEEEEE;
+	border-radius: 20px;
+	border:none;
+}
+#btn{
+    color:rgb(255, 255, 255);
+    background-color: #9A7B57;
+    padding:10px;
+    font-size: large;
+    border-radius: 10px;
+    border:none;
+}
+
+@media screen and (max-width: 570px) {
+    #form {
+      width: 65%;
+      margin-left:none;
+      padding:40px;
+    }
+  }

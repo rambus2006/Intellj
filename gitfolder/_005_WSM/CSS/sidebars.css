@@ -1,0 +1,787 @@
+@media (min-width:992px) {
+    body{
+        margin:0;
+        padding:0;
+    }
+    a{
+        text-decoration: none;
+        color:white;
+        
+    }
+    li{list-style:none}
+    /*1-1 네비게이션 바*/
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:#9A7B57;
+        padding:8px 12px
+        
+    }
+    /*1-2 네비게이션 바 로고 */
+    .navbar_logo{
+        font-size: 40px; 
+        color:white; 
+        display: flex;
+      
+    }
+    .navbar_logo img{
+        width: 80px;
+        height: 50px;
+
+    }
+    /*1-3 네비게이션 바 아이콘*/
+    .navbar_logo i{
+        color:aliceblue;
+    }
+    /*1-4배경 이미지 자르기*/
+    .rainbackground{
+        width: 100%;
+        
+        overflow: hidden;
+    }
+    /*2-1사이드 바 갈색라인 */
+    .menu hr{
+        border:0;
+        margin-top:60px;
+        height: 10px;
+        background-color:#9A7B57;
+    }
+    /*3-1 햄버거 버튼*/
+      .center {
+        position:absolute;
+        top:10px;
+        right:40px;
+        transform:translate(10px,30px);
+    }
+    /*3-2 막대기 3개 만들기*/
+    /*input 요소 중 id값이 같은 요소만 선택 */
+    input[id="menuicon"] {
+      display:none; /*요소 안보이게 가리기 */
+    }
+    input[id="menuicon"] + label { /*'+'는 인접 요소 선택자*/
+      display:block; /*레이아웃(div와 같은 block 요소를 선언*/
+      width:60px;
+      height:40px;
+      position:relative; /*absolute의 기준점*/
+      cursor:pointer; /*커서 모양 바꾸기 */
+    }
+    input[id="menuicon"] + label span { /*3개의 span 태그를 선택*/
+      display:block;
+      position:absolute; /*레이어 속성*/
+      width:100%;
+      height:5px;
+      border-radius:30px;
+      background:#000;
+      transition:all .35s; /*모션(애니메이션 효과주기)*/
+    }
+    /*각 요소를 순차적으로 선택 */
+    input[id="menuicon"] + label span:nth-child(1) {
+      top:0; /*맨 위*/
+    }
+    input[id="menuicon"] + label span:nth-child(2) {
+      top:50%; /*가운데*/
+      transform:translateY(-50%); /*요소를 y축으로 값만큼 이동,안주면 확실히 가운데가 아니라 약간 내려간 형태*/
+    } 
+    input[id="menuicon"] + label span:nth-child(3) {
+      bottom:0;/*하단*/
+    }
+
+    input[id="menuicon"]:checked + label span:nth-child(1) { /*menuicon 아이디 값을 갖고 있는 input 요소가 check가 되었을 때/ 체크가 되었을 때 첫번째 span 요소  */
+      top:50%; /*absolute의 위치값(checked 변화값)*/
+      transform:translateY(-50%) rotate(45deg); /*translateY : y축 이동, rotate : 45도회전*/
+    }
+    input[id="menuicon"]:checked + label span:nth-child(2) {
+      opacity:0; /*요소의 투명도*/
+    }
+    input[id="menuicon"]:checked + label span:nth-child(3) {
+      bottom:50%; /*absolute의 위치값(checked 변화값)*/
+      transform:translateY(50%) rotate(-45deg);  /*translateY : y축 이동, rotate : 45도회전*/
+    }
+    /*햄버거 버튼 끝---------------------------------------------------------------------------------------------*/
+
+    /*3-2*/
+    /*옆에서 나오는 창 구현*/
+    div[class="sidebar"] { /*속성 선택자를 알려주는 방식(=.sidebar{스타일}) */
+      width:300px; /*영역의 가로*/
+      height:100%; /*영역의 세로*/
+      background:#222; /*배경색*/
+      position:fixed; /*레이어 속성(화면에 고정)*/
+      top:0;
+      right:-300px;
+      z-index:1;
+      transition:all .35s; /*변화값에 모션을 줌*/
+    }
+
+    input[id="menuicon"]:checked + label + div { /*input 요소 중 menuicon 아이디 값을 갖고 있는 요소를 선택/':checked' 체크 된다면 실행한다./'label' input 다음에 있는 label을 선택/label다음에 있는 div를 선택   */
+      right:0; /*사이드 바가 위치할 포지션의 위치값 */
+    }
+
+    /*4-1 햄버거 메뉴 */
+    .menu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        max-width: 0;
+        transition: 0.5s ease;
+        z-index: 1;
+        background-color: #eee;
+      }
+      
+      .burger-icon {
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        z-index: 2;
+        padding: 8px 12px ;
+        top: 10px;
+        right: 10px;
+        user-select: none;
+        width: auto;
+        margin: 0;
+        margin-top: 10px;
+      }
+      
+      .burger-icon .burger-sticks {
+        background: #333;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 30px;
+      }
+      
+      .burger-icon .burger-sticks:before,
+      .burger-icon .burger-sticks:after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+      
+      .burger-icon .burger-sticks:before {
+        top: 10px;
+      }
+      
+      .burger-icon .burger-sticks:after {
+        top: -10px;
+      }
+      
+      .burger-check {
+        display: none;
+      }
+      
+      .burger-check:checked~.menu {
+        max-width: 600px;
+      }
+      
+      .burger-check:checked~.burger-icon .burger-sticks {
+        background: transparent;
+      }
+      
+      .burger-check:checked~.burger-icon .burger-sticks:before {
+        transform: rotate(-45deg);
+      }
+      
+      .burger-check:checked~.burger-icon .burger-sticks:after {
+        transform: rotate(45deg);
+      }
+      
+      .burger-check:checked~.burger-icon:not(.steps) .burger-sticks:before,
+      .burger-check:checked~.burger-icon:not(.steps) .burger-sticks:after {
+        margin-top: 0;
+        top:0px;
+      }
+      /*4-2 햄버거 메뉴 클릭 시 안쪽 링크 메뉴 */
+    .navbar_menu a{
+        color:black;
+    }
+    .navbar_menu li{
+        list-style: none; /*글머리 기호 없애기 */
+        
+        padding: 10px; 
+        font-size: 26px; /*글자 크기 조절*/
+    }
+    /*5 사이드바 하위메뉴*/
+
+    .clothmenu {
+      position: absolute;
+      width: 1800px;
+      overflow: hidden;
+      margin: 100px auto;
+      
+      background-color: white;
+    }
+
+    .clothmenu > li {
+      width: 100%;
+      text-align: center;
+      line-height: 40px;
+      background-color: #fff;
+      color: black;
+    }
+
+    .clothmenu a {
+      color: #fff;
+    }
+
+    .submenu > li {
+      line-height: 50px;
+      background-color: #94a9ff;
+    }
+
+    .submenu {
+      height: 0; /*ul의 높이를 안보이게 처리*/
+      overflow: hidden;
+    }
+    .clothmenu > li:hover {
+      background-color: #94a9ff;
+      transition-duration: 0.5s;
+    }
+
+    .clothmenu > li:hover .submenu {
+      height: 250px; /*서브메뉴 li한개의 높이 50*5*/
+      transition-duration: 1s;
+    }
+
+    /*6-1 홈 화면 (비오는 날 배경) */
+    .rainbackground img{
+        width:100vw;
+        height:100vh;
+        opacity: 0.6; /*불투명도 설정*/
+        position: relative;
+    }
+    /*6-2 홈화면 날씨 텍스트1*/
+    .rainText{
+        position: absolute;
+        font-size: 50px;
+        top: 40px;
+        left: 40px;
+        margin:0;
+        line-height : 1.4em;
+        
+    }
+    .rainText h1{
+        color:#6484C3;
+        font-style: bold;
+        font-size:100px;
+    }
+    /*6-3 홈화면 날씨 컬러팔레트 추천*/
+    /*6-3-1 카드1(Campanula)*/
+    .cardCampanula{
+        position: absolute;
+        margin:auto;
+        width: 240px;
+        height: 300px;
+        border: 1px solid gray;
+        border-radius: 5%;
+        background-color: white;
+        top:800px;
+        margin-left:16px;
+        left:0px;
+        display: block;
+        visibility: visible;
+    }
+    .cardCampanula img{
+        margin-top:20px;
+        margin-left:20px;
+        margin-right:20px;
+        width: 200px;
+        height: 160px;
+        border-radius:4%;
+    }
+    .cardCampanula h1{
+        color:black;
+        margin-left: 16px;
+        margin-top: 0;
+
+    }
+    /*6-3-2 카드1(Midnight)*/
+    .cardMidnight{
+        position: absolute;
+        margin:auto;
+        width: 240px;
+        height: 300px;
+        border: 1px solid gray;
+        border-radius: 5%;
+        background-color: white;
+        top:800px;
+        margin-left:16px;
+        left:800px;
+        display: block;
+        visibility: visible;
+    }
+    .cardMidnight img{
+        margin-top:20px;
+        margin-left:20px;
+        margin-right:20px;
+        width: 200px;
+        height: 160px;
+        border-radius: 4%;
+    }
+    .cardMidnight h1{
+        color:black;
+        margin-left: 16px;
+        margin-top: 0px;
+
+    }
+
+    /*6-3-3 카드1(ClassicBlue)*/
+    .cardClassicBlue{
+        position: absolute;
+        margin:auto;
+        width: 240px;
+        height: 300px;
+        border: 1px solid gray;
+        border-radius: 5%;
+        background-color: white;
+        top:800px;
+        margin-left:16px;
+        left:700px;
+        display: block;
+        visibility: visible;
+    }
+    .cardClassicBlue img{
+        margin-top:20px;
+        margin-left:20px;
+        margin-right:20px;
+        width: 200px;
+        height: 160px;
+        border-radius: 4%;
+    }
+    .cardClassicBlue h1{
+        color:black;
+        margin-left: 16px;
+        margin-top: 0px;
+
+    }
+}
+
+
+@media (max-width:991px) and (min-width:768px) {
+    .cardCampanula{
+      position: absolute;
+      margin:auto;
+      width: 240px;
+      height: 300px;
+      border: 1px solid gray;
+      border-radius: 5%;
+      background-color: white;
+      top:800px;
+      margin-left:14px;
+      left:0px;
+      display: block;
+      visibility: visible;
+  }
+  .cardCampanula img{
+      margin-top:20px;
+      margin-left:20px;
+      margin-right:20px;
+      width: 200px;
+      height: 160px;
+      border-radius:4%;
+  }
+  .cardCampanula h1{
+      color:black;
+      margin-left: 16px;
+      margin-top: 0;
+
+  }
+  .cardCampanula img{
+    margin-top:20px;
+    margin-left:20px;
+    margin-right:20px;
+    width: 200px;
+    height: 160px;
+    border-radius:4%;
+  }
+  .cardCampanula h1{
+      color:black;
+      margin-left: 16px;
+      margin-top: 0;
+
+  }
+
+}
+
+
+@media (max-width:767px) and (min-width:0px) {
+    body{
+        margin:0;
+        padding:0;
+    }
+    a{
+        text-decoration: none;
+        color:white;
+        
+    }
+    li{list-style:none}
+    /*1-1 네비게이션 바*/
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:#9A7B57;
+        padding:8px 12px
+        
+    }
+    /*1-2 네비게이션 바 로고 */
+    .navbar_logo{
+        font-size: 40px; 
+        color:white; 
+        display: flex;
+      
+    }
+    .navbar_logo img{
+        width: 80px;
+        height: 40px;
+
+    }
+    /*1-3 네비게이션 바 아이콘*/
+    .navbar_logo i{
+        color:aliceblue;
+    }
+    /*1-4배경 이미지 자르기*/
+    .rainbackground{
+        width: 2000px;
+        height:580px;
+        overflow: hidden;
+    }
+    /*2-1사이드 바 갈색라인 */
+    .menu hr{
+        border:0;
+        margin-top:60px;
+        height: 10px;
+        background-color:#9A7B57;
+    }
+    /*3-1 햄버거 버튼*/
+      .center {
+        position:absolute;
+        top:10px;
+        right:40px;
+        transform:translate(10px,30px);
+    }
+    /*3-2*/
+    /*input 요소 중 id값이 같은 요소만 선택 */
+    input[id="menuicon"] {
+      display:none; /*요소 안보이게 가리기 */
+    }
+    input[id="menuicon"] + label { /*'+'는 인접 요소 선택자*/
+      display:block; /*레이아웃(div와 같은 block 요소를 선언*/
+      width:60px;
+      height:40px;
+      position:relative; /*absolute의 기준점*/
+      cursor:pointer; /*커서 모양 바꾸기 */
+    }
+    input[id="menuicon"] + label span { /*3개의 span 태그를 선택*/
+      display:block;
+      position:absolute; /*레이어 속성*/
+      width:100%;
+      height:5px;
+      border-radius:30px;
+      background:#000;
+      transition:all .35s; /*모션(애니메이션 효과주기)*/
+    }
+    /*각 요소를 순차적으로 선택 */
+    input[id="menuicon"] + label span:nth-child(1) {
+      top:0; /*맨 위*/
+    }
+    input[id="menuicon"] + label span:nth-child(2) {
+      top:50%; /*가운데*/
+      transform:translateY(-50%); /*요소를 y축으로 값만큼 이동,안주면 확실히 가운데가 아니라 약간 내려간 형태*/
+    } 
+    input[id="menuicon"] + label span:nth-child(3) {
+      bottom:0;/*하단*/
+    }
+
+    input[id="menuicon"]:checked + label span:nth-child(1) { /*menuicon 아이디 값을 갖고 있는 input 요소가 check가 되었을 때/ 체크가 되었을 때 첫번째 span 요소  */
+      top:50%; /*absolute의 위치값(checked 변화값)*/
+      transform:translateY(-50%) rotate(45deg); /*translateY : y축 이동, rotate : 45도회전*/
+    }
+    input[id="menuicon"]:checked + label span:nth-child(2) {
+      opacity:0; /*요소의 투명도*/
+    }
+    input[id="menuicon"]:checked + label span:nth-child(3) {
+      bottom:50%; /*absolute의 위치값(checked 변화값)*/
+      transform:translateY(50%) rotate(-45deg);  /*translateY : y축 이동, rotate : 45도회전*/
+    }
+    /*햄버거 버튼 끝---------------------------------------------------------------------------------------------*/
+
+  /*3-2*/
+  /*옆에서 나오는 창 구현*/
+    div[class="sidebar"] { /*속성 선택자를 알려주는 방식(=.sidebar{스타일}) */
+      width:300px; /*영역의 가로*/
+      height:100%; /*영역의 세로*/
+      background:#222; /*배경색*/
+      position:fixed; /*레이어 속성(화면에 고정)*/
+      top:0;
+      right:-300px;
+      z-index:1;
+      transition:all .35s; /*변화값에 모션을 줌*/
+    }
+
+    input[id="menuicon"]:checked + label + div { /*input 요소 중 menuicon 아이디 값을 갖고 있는 요소를 선택/':checked' 체크 된다면 실행한다./'label' input 다음에 있는 label을 선택/label다음에 있는 div를 선택   */
+      right:0; /*사이드 바가 위치할 포지션의 위치값 */
+    }
+
+    /*4-1 햄버거 메뉴 */
+    .menu {
+        
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        max-width: 0;
+        transition: 0.5s ease;
+        z-index: 1;
+        background-color: #eee;
+      }
+      
+      .burger-icon {
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        z-index: 2;
+        padding: 8px 12px ;
+        top: 10px;
+        right: 10px;
+        user-select: none;
+        width: auto;
+        margin: 0;
+        margin-top: 10px;
+      }
+      
+      .burger-icon .burger-sticks {
+        background: #333;
+        display: block;
+        height: 3px;
+        position: relative;
+        transition: background .2s ease-out;
+        width: 30px;
+      }
+      
+      .burger-icon .burger-sticks:before,
+      .burger-icon .burger-sticks:after {
+        background: #333;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+      }
+      
+      .burger-icon .burger-sticks:before {
+        top: 10px;
+      }
+      
+      .burger-icon .burger-sticks:after {
+        top: -10px;
+      }
+      
+      .burger-check {
+        display: none;
+      }
+      
+      .burger-check:checked~.menu {
+        max-width: 600px;
+      }
+      
+      .burger-check:checked~.burger-icon .burger-sticks {
+        background: transparent;
+      }
+      
+      .burger-check:checked~.burger-icon .burger-sticks:before {
+        transform: rotate(-45deg);
+      }
+      
+      .burger-check:checked~.burger-icon .burger-sticks:after {
+        transform: rotate(45deg);
+      }
+      
+      .burger-check:checked~.burger-icon:not(.steps) .burger-sticks:before,
+      .burger-check:checked~.burger-icon:not(.steps) .burger-sticks:after {
+        margin-top: 0;
+        top:0px;
+      }
+      /*4-2 햄버거 메뉴 클릭 시 안쪽 링크 메뉴 */
+    .navbar_menu a{
+        color:black;
+    }
+    .navbar_menu li{
+        list-style: none; /*글머리 기호 없애기 */
+        
+        padding: 10px; 
+        font-size: 26px; /*글자 크기 조절*/
+    }
+    /*5 사이드바 하위메뉴*/
+    
+    .clothmenu {
+      position: absolute;
+      width: 1800px;
+      overflow: hidden;
+      margin: 100px auto;
+      
+      background-color: white;
+    }
+
+    .clothmenu > li {
+      width: 100%;
+      text-align: center;
+      line-height: 40px;
+      background-color: #fff;
+      color: black;
+    }
+
+    .clothmenu a {
+      color: #fff;
+    }
+
+    .submenu > li {
+      line-height: 50px;
+      background-color: #94a9ff;
+    }
+
+    .submenu {
+      height: 0; /*ul의 높이를 안보이게 처리*/
+      overflow: hidden;
+    }
+    .clothmenu > li:hover {
+      background-color: #94a9ff;
+      transition-duration: 0.5s;
+    }
+
+    .clothmenu > li:hover .submenu {
+      height: 250px; /*서브메뉴 li한개의 높이 50*5*/
+      transition-duration: 1s;
+    }
+
+    /*6-1 홈 화면 (비오는 날 배경) */
+    .rainbackground img{
+        width:100vw;
+        height:100vh;
+        opacity: 0.6; /*불투명도 설정*/
+        position: relative;
+    }
+    /*6-2 홈화면 날씨 텍스트1*/
+    .rainText{
+        position: absolute;
+        font-size: 50px;
+        top: 40px;
+        left: 40px;
+        margin:0;
+        line-height : 1.4em;
+        
+    }
+    .rainText h1{
+        color:#6484C3;
+        font-style: bold;
+        font-size:100px;
+    }
+    /*6-3 홈화면 날씨 컬러팔레트 추천*/
+    /*6-3-1 카드*/
+    .cards{
+      display: flex;
+    }
+    /*6-3-1 카드1(Campanula)*/
+    .cardCampanula{
+        position: absolute;
+        margin:auto;
+        width: 3em;
+        height: 4em;
+        border: 1px solid gray;
+        border-radius: 5%;
+        background-color: white;
+        top:1em;
+        /* margin-left:16px; */
+        /* left:0px; */
+        /* display: block; */
+        visibility: visible;
+        flex: 0 1 150px;
+    }
+    .cardCampanula img{
+        margin-top:20px;
+        margin-left:20px;
+        margin-right:20px;
+        width: 200px;
+        height: 160px;
+        border-radius:4%;
+        flex: 0 1 150px;
+    }
+    .cardCampanula h1{
+        color:black;
+        margin-left: 16px;
+        margin-top: 0;
+        flex: 0 1 150px;
+
+    }
+    /*6-3-2 카드1(Midnight)*/
+    .cardMidnight{
+        position: absolute;
+        margin:auto;
+        width: 240px;
+        height: 300px;
+        border: 1px solid gray;
+        border-radius: 5%;
+        background-color: white;
+        top:800px;
+        margin-left:16px;
+        left:350px;
+        /* display: block; */
+        visibility: visible;
+        /* flex: 0 1 150px; */
+    }
+    .cardMidnight img{
+        margin-top:20px;
+        margin-left:20px;
+        margin-right:20px;
+        width: 200px;
+        height: 160px;
+        border-radius: 4%;
+        flex: 0 1 150px;
+    }
+    .cardMidnight h1{
+        color:black;
+        margin-left: 16px;
+        margin-top: 0px;
+        flex: 0 1 150px;
+
+    }
+
+    /*6-3-3 카드1(ClassicBlue)*/
+    .cardClassicBlue{
+        position: absolute;
+        margin:auto;
+        width: 240px;
+        height: 300px;
+        border: 1px solid gray;
+        border-radius: 5%;
+        background-color: white;
+        top:800px;
+        margin-left:16px;
+        left:700px;
+        /* display: block; */
+        visibility: visible;
+        /* flex: 0 1 150px; */
+    }
+    .cardClassicBlue img{
+        margin-top:20px;
+        margin-left:20px;
+        margin-right:20px;
+        width: 200px;
+        height: 160px;
+        border-radius: 4%;
+        /* flex: 0 1 150px; */
+    }
+    .cardClassicBlue h1{
+        color:black;
+        margin-left: 16px;
+        margin-top: 0px;
+        /* flex: 0 1 150px; */
+
+    }
+}
