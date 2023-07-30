@@ -39,3 +39,9 @@ $ git reset --hard @^ (@^, @~1, @~ 가 동일)
 
 //git remote 취소하기 (원격저장소 연결 해제)
 $ git remote rm origin
+
+//깃 브랜치 생성
+$ git branch 브랜치 이름 master
+
+파이썬 origin python
+웹 Web

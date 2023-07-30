@@ -73,5 +73,51 @@ public class IOStudy {
 
         }
         fis1.close();
+
+        FileOutputStream fos2 = new FileOutputStream("temp/buffer_test.bin");
+        BufferedOutputStream bos = new BufferedOutputStream(fos2,3);
+
+        byte b3 = 100;
+        for(int i=0;i<4;i++){
+            bos.write(b3);
+        }
+
+        //file 클래스 사용
+        File f = new File("c:/windows/system.ini");
+        String name =  f.getName();
+        String path = f.getPath();
+        String parent = f.getParent();
+        System.out.println(name);
+        System.out.println(path);
+        System.out.println(parent);
+
+        //파일인지 디렉토리인지
+        //폴더==디렉토리
+        if(f.isFile()){
+            System.out.println(f.getPath() + "는 파일입니다. ");
+        }else if(f.isDirectory()){
+            System.out.println(f.getPath() + "는 디렉터리 입니다. ");
+        }
+
+//        File dir = new File("c:/windows");
+//        File[] files = dir.listFiles();
+//
+//        for(File file:files){
+//
+//        }
+        File src = new File(" ");
+        File dest = new File("C:/HarryPotter copy.jpg");
+
+        FileInputStream fis3 = new FileInputStream(src);
+        FileOutputStream fos3 = new FileOutputStream(dest);
+        byte[] buf2 = new byte[8192];
+        while(true){
+            int readBytesCount = fis3.read(buf2);
+            fos3.write(buf2,0,readBytesCount);
+            if(readBytesCount<buf2.length) break; //버퍼를 쓴다고 할 수 있다./ 8192보다 작으면 끝낸다.
+        }
+        fis.close();
+        fos3.close();
+
     }
 }
